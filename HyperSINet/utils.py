@@ -127,6 +127,6 @@ def generate_png(net,net_input,data_gt,device,total_indices, path):
     y_list1 = list_to_colormap(x1)
     y_gt = list_to_colormap(gt)
     y_re1 = np.reshape(y_list1, (gt_hsi.shape[0], gt_hsi.shape[1], 3))
-    # gt_re = np.reshape(y_gt, (gt_hsi.shape[0], gt_hsi.shape[1], 3))
+    gt_re = np.reshape(y_gt, (gt_hsi.shape[0], gt_hsi.shape[1], 3))
     classification_map(y_re1, gt_hsi, 300,path + 'gcnhu.png')
     print('------Get classification maps successful-------')

@@ -97,7 +97,7 @@ def Get_mat():
     net_input = torch.from_numpy(net_input.astype(np.float32)).to(device)
     return train_samples_gt,test_samples_gt,val_samples_gt,train_samples_gt_onehot,test_samples_gt_onehot,val_samples_gt_onehot,train_label_mask,test_label_mask,val_label_mask,net_input
 
-def get_Q_and_S_and_Segments(data, scale=100, compactness=1, max_iter=20, sigma=1, min_size_factor=0.1,max_size_factor=2):
+def get_Q_and_S_and_Segments(data, scale=50, compactness=1, max_iter=20, sigma=1, min_size_factor=0.1,max_size_factor=2):
     height, width, bands = data.shape
     n_segments = height * width / scale  # 分割数
     data = np.reshape(data, [height * width, bands])
@@ -228,7 +228,7 @@ for ooo in range(8):
     kappa = cohen_kappa_score(test_samples_gt_cpu[test_label_mask_cpu], predict[test_label_mask_cpu] + 1)
     print(classfication)
     print("kappa", kappa)
-    # _,total_indices = utils.sampling(1,data_gt)
+    _,total_indices = utils.sampling(1,data_gt)
     # # print(len(total_indices))
-    # utils.generate_png(net,net_input,data_gt,device,total_indices,'/home/project/Group-Aware-Hierarchical-Transformer-main/classification_maps/')
+    utils.generate_png(net,net_input,data_gt,device,total_indices,'/home/project/HyperSINet/classification_maps/')
     del net
