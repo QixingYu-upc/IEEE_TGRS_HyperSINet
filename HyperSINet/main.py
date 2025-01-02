@@ -97,7 +97,7 @@ def Get_mat():
     net_input = torch.from_numpy(net_input.astype(np.float32)).to(device)
     return train_samples_gt,test_samples_gt,val_samples_gt,train_samples_gt_onehot,test_samples_gt_onehot,val_samples_gt_onehot,train_label_mask,test_label_mask,val_label_mask,net_input
 
-def get_Q_and_S_and_Segments(data, scale=1500, compactness=1, max_iter=20, sigma=1, min_size_factor=0.1,max_size_factor=2):
+def get_Q_and_S_and_Segments(data, scale=100, compactness=1, max_iter=20, sigma=1, min_size_factor=0.1,max_size_factor=2):
     height, width, bands = data.shape
     n_segments = height * width / scale  # 分割数
     data = np.reshape(data, [height * width, bands])
@@ -165,7 +165,7 @@ def get_Q_and_S_and_Segments(data, scale=1500, compactness=1, max_iter=20, sigma
     A = torch.from_numpy(A.astype(np.float32)).to(device)
     mask = torch.from_numpy(mask.astype(np.float32)).to(device)
     return Q, A
-for ooo in range(50):
+for ooo in range(8):
     train_samples_gt,test_samples_gt,val_samples_gt,train_samples_gt_onehot,test_samples_gt_onehot,val_samples_gt_onehot,train_label_mask,test_label_mask,val_label_mask,net_input = Get_mat()
     Q,mask = get_Q_and_S_and_Segments(data)
     net = HyperSINet.HyperSINet(Q, mask, in_channels=bands,out_channels=64,layers=2,num_classes=class_num,depth=1).to(device)
