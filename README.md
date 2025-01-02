@@ -4,13 +4,20 @@ HyperSINet: A Synergetic Interaction Network Combined With Convolution and Trans
 Configuration
 
 1.Python 3.8.0
+
 2.PyTorch 1.7.0.
+
 3.i7-8700K CPU
+
 4.NVIDIA A100 Tensor Core GPU
 
 How to Use?
+
+
 1. Set up the dataset in the main. py file and change the data path in the data_deader file.
+
 2.If the data is too large to exceed the GPU's capacity, the size of the superpixel can be changed, that is, "scale=?".
+
 3.Python main. py.
 
 
