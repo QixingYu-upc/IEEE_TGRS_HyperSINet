@@ -24,7 +24,7 @@ How to Use?
 Citation
 ---
 
-* Q. Yu, W. Wei, D. Li, Z. Pan, C. Li and D. Hong, "HyperSINet: A Synergetic Interaction Network Combined With Convolution and Transformer for Hyperspectral Image Classification," in?IEEE Transactions on Geoscience and Remote Sensing, vol. 62, pp. 1-18, 2024, Art no. 5508118, doi: 10.1109/TGRS.2024.3362471.
+* Q. Yu, W. Wei, D. Li, Z. Pan, C. Li and D. Hong, "HyperSINet: A Synergetic Interaction Network Combined With Convolution and Transformer for Hyperspectral Image Classification," in IEEE Transactions on Geoscience and Remote Sensing, vol. 62, pp. 1-18, 2024, Art no. 5508118, doi: 10.1109/TGRS.2024.3362471.
 
 * 
 
